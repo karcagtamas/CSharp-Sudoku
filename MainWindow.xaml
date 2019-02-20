@@ -17,6 +17,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -29,5 +30,10 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="9" Grid.ColumnSpan="9" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <Button x:Name="btnGenerateFull" Content="Teljes Genreálás" Padding="5" Width="150" Margin="10" Click="BtnGenerateFull_Click"/>
+            <Button x:Name="btnGenerateTask" Content="Feladat Genreálás" Padding="5" Width="150" Margin="10" Click="BtnGenerateTask_Click"/>
+            <Button x:Name="btnTaskComplete" Content="Megoldás" Padding="5" Width="150" Margin="10" Click="BtnTaskComplete_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
