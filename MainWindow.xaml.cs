@@ -77,9 +77,10 @@ namespace Sudoku
         public void generateTable()
         {
             Random r = new Random();
-            for (int i = 0; i < this.Fields.GetLength(0); i++)
+            bool f = true;
+            for (int i = 0; i < this.Fields.GetLength(0) && f; i++)
             {
-                for (int j = 0; j < this.Fields.GetLength(1); j++)
+                for (int j = 0; j < this.Fields.GetLength(1) && f; j++)
                 {
                     int x;
                     int count = 0;
@@ -88,7 +89,8 @@ namespace Sudoku
                         x = r.Next(1,10);
                         count++;
                     } while (check(i,j,x) && count < 100);
-                    if (count < 100) this.Fields[i,j].number = x;
+                    if (count < 100) this.Fields[i, j].number = x;
+                    else f = false;
                 }
             }
         }
