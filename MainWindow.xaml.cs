@@ -44,7 +44,7 @@ namespace Sudoku
                     do
                     {
                         x = r.Next(1,10);
-                    } while (check(i,j,));
+                    } while (check(i,j,x));
                     Field[i][j].number = x;
                 }
             }
@@ -52,9 +52,8 @@ namespace Sudoku
 
         public bool check(int i, int j, int x)
         {
-
-        
-        
+            if (checkRow(j, x) && checkCol(i, x) && checkOneBlock(i,j,x)) return false;
+            else return true;
         }
 
         public bool checkRow(int j, int x){
